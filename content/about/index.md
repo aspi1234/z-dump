@@ -6,7 +6,7 @@ cascade:
   showReadingTime : false
   showDate : false
   showWordCount : false
-  showEdit : true
+  showEdit : false
 ---
 
 "Hi there, I’m Ngatchou. You could say I’m an Information Technology enthusiast, but really, I'm just incredibly curious about how things work.
