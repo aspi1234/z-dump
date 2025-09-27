@@ -10,16 +10,48 @@
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
 
-#[[main]]
-#  name = "Blog"
-#  pageRef = "posts"
-#  weight = 10
+[[main]]
+ name = "Concepts"
+ pageRef = "concepts/"
+ weight = 10
 
-#[[main]]
-#  name = "Parent"
+# [[main]]
+#  name = "Writeups"
+#  pageRef = "writeups/"
 #  weight = 20
 
-#[[main]]
+[[main]]
+ name = "Projects"
+ pageRef = "Projects/"
+ weight = 30
+
+# [[main]]
+#  name = "How To"
+#  pageRef = "How-to/"
+#  weight = 40
+
+# [[main]]
+#  name = "Perspectives"
+#  pageRef = "perspectives/"
+#  weight = 50
+
+[[main]]
+ name = "About me"
+ pageRef = "about/"
+ weight = 60
+
+ [[main]]
+ name = "Resume"
+ pageRef = "Resume/"
+ weight = 70
+
+# [[main]]
+#   pre = "github"
+#   name = "GitHub"
+#   url = "https://github.com/nunocoracao/blowfish"
+#   weight = 30
+
+# [[main]]
 #  name = "example sub-menu 1"
 #  parent = "Parent"
 #  pageRef = "posts"
@@ -58,12 +90,12 @@
 # the copyright notice. Configure as per the main menu above.
 
 
-# [[footer]]
-#   name = "Tags"
-#   pageRef = "tags"
-#   weight = 10
+[[footer]]
+  name = "Tags"
+  pageRef = "tags"
+  weight = 10
 
-# [[footer]]
-#   name = "Categories"
-#   pageRef = "categories"
-#   weight = 20
+[[footer]]
+  name = "Categories"
+  pageRef = "categories"
+  weight = 20
