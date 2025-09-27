@@ -1,0 +1,5 @@
+{{ $image := .Page.Resources.Get "always.png" }}
+{{ with $image }}
+  {{ $processedImage := $image.Resize "800x" }}
+  <img src="{{ $processedImage.RelPermalink }}" width="{{ $processedImage.Width }}" height="{{ $processedImage.Height }}" alt="This is the alt text for the env setup image" nozoom=true>
+{{ end }}
