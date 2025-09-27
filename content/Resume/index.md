@@ -1,12 +1,13 @@
 +++
 title = 'Resume'
-draft = true
+draft = false
 showAuthor = true
 showDate = false
 showReadingTime = false
 showWordCount = false
 showTableOfContents = true
 showTitle = false
+showEdit = false
 +++
 
 <br>
@@ -35,6 +36,7 @@ ISTAG
 <br>
 
 # Certifications
+
 {{< timelineItem icon="lf" header="Linux Foundation IT Associate" badge="2022" subheader="Linux Foundation" >}}
 {{< /timelineItem >}}
 {{< timelineItem icon="lf" header="Fundamentals of Open Source IT and Cloud Computing LFS200" badge="2022" subheader="Linux Foundation" >}}
@@ -47,6 +49,7 @@ ISTAG
 <br>
 
 # Training
+
 {{< timelineItem icon="star" header="Developement web - Niveau Debutant" badge="2025" subheader="D-clic" >}}
 Online
 {{< /timelineItem >}}
@@ -62,6 +65,7 @@ Online
 <br>
 
 # Languages
+
 {{< timelineItem icon="language" header="French - English">}}
 <strong>French</strong> - Primary Language<br>
 <strong>English</strong> - Secondary Language
