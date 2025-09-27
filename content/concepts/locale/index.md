@@ -9,18 +9,17 @@ showComments = true
 +++
 
 {{< figure
-    src="featured.png"
-    nozoom=true
-    alt="Abstract purple artwork"
->}}
+src="featured.png"
+nozoom=true
+alt="Abstract purple artwork">}}
 
-At its core, the `locale` command gives information on how a Linux system and its programs are configured to display information related to language and geographical region[^1].This is somehow similar to the *"Language & Region"* settings panel in Windows or macOS. It's where you set things such as :
+At its core, the `locale` command gives information on how a Linux system and its programs are configured to display information related to language and geographical region[^1].This is somehow similar to the _"Language & Region"_ settings panel in Windows or macOS. It's where you set things such as :
 
-*   The display language (English, French, Japanese etc...).
-*   The format for dates and times (`MM/DD/YYYY` vs. `DD.MM.YYYY`).
-*   The symbol for currency (`$` vs. `€`).
-*   The character used as a decimal point (`.` vs. `,`).
-*   How text should be sorted alphabetically.
+- The display language (English, French, Japanese etc...).
+- The format for dates and times (`MM/DD/YYYY` vs. `DD.MM.YYYY`).
+- The symbol for currency (`$` vs. `€`).
+- The character used as a decimal point (`.` vs. `,`).
+- How text should be sorted alphabetically.
 
 The `locale` command is the command-line equivalent of that settings panel. It shows the current values for all these settings in a given terminal session.
 
@@ -38,18 +37,18 @@ $ locale
 
 **Example Output and What It Means:**
 
-*   **`LANG=en_US.UTF-8`**: This is the most important one. It's the **default** language and region for all categories unless a more specific variable is set. This means US English using the UTF-8 character set.
-*   **`LC_CTYPE="en_US.UTF-8"`**: Controls character classification. (What is a letter? What is a number? How are they sorted?)
-*   **`LC_NUMERIC="en_US.UTF-8"`**: Controls number formatting. (e.g., `1,000.00`)
-*   **`LC_TIME="en_US.UTF-8"`**: Controls date and time formatting. (e.g., `Tuesday, August 21, 2025`)
-*   **`LC_COLLATE="en_US.UTF-8"`**: Controls the alphabetical sorting order of strings.
-*   **`LC_MONETARY="en_US.UTF-8"`**: Controls currency formatting. (e.g., `$1,234.56`)
-*   **`LC_MESSAGES="en_US.UTF-8"`**: Controls the language of system messages and program menus.
-*   **`LC_ALL=`**: This one is special. If it's set, it acts as a master override and forces **all** categories to use its value, ignoring `LANG` and all other `LC_*` variables. It's usually empty by default.
+- **`LANG=en_US.UTF-8`**: This is the most important one. It's the **default** language and region for all categories unless a more specific variable is set. This means US English using the UTF-8 character set.
+- **`LC_CTYPE="en_US.UTF-8"`**: Controls character classification. (What is a letter? What is a number? How are they sorted?)
+- **`LC_NUMERIC="en_US.UTF-8"`**: Controls number formatting. (e.g., `1,000.00`)
+- **`LC_TIME="en_US.UTF-8"`**: Controls date and time formatting. (e.g., `Tuesday, August 21, 2025`)
+- **`LC_COLLATE="en_US.UTF-8"`**: Controls the alphabetical sorting order of strings.
+- **`LC_MONETARY="en_US.UTF-8"`**: Controls currency formatting. (e.g., `$1,234.56`)
+- **`LC_MESSAGES="en_US.UTF-8"`**: Controls the language of system messages and program menus.
+- **`LC_ALL=`**: This one is special. If it's set, it acts as a master override and forces **all** categories to use its value, ignoring `LANG` and all other `LC_*` variables. It's usually empty by default.
 
 ## 2. Listing All Available Locales: `locale -a`
 
-It's used to list all the *"language packs"* or *locale definitions* that are **installed on the system**.
+It's used to list all the _"language packs"_ or _locale definitions_ that are **installed on the system**.
 
 ```bash
 $ locale -a
@@ -65,11 +64,12 @@ Locales, are often **not pre-installed** to save space. The process involves gen
 
 ### Verify Installed Locales
 
-Using the `locale -a` command we can verify if the *locale (language)* we want to use hasn't been installed (compile) already.
+Using the `locale -a` command we can verify if the _locale (language)_ we want to use hasn't been installed (compile) already.
 
 ```bash
 $ locale -a
 ```
+
 This command reads the compiled locale files from the system. If it's not in this list, the system can't use it.
 
 ### Installing New Locales (Requires `sudo`[^2])
@@ -97,7 +97,7 @@ Inside, you will see hundreds of lines, most of them commented out with a `#`. B
 #fr_BE.UTF-8 UTF-8
 #fr_CA.UTF-8 UTF-8
 #fr_CH.UTF-8 UTF-8
-#fr_FR.UTF-8 UTF-8 
+#fr_FR.UTF-8 UTF-8
 #fr_LU.UTF-8 UTF-8
 # ...
 ```
@@ -120,17 +120,19 @@ Generation complete.
 
 **Verify the Installation**
 Run the verification command again. Your newly generated locale should now appear in the list.
+
 ```bash
 $ locale -a
 ```
 
-You can further test this using the `env`[^3] command as follow 
+You can further test this using the `env`[^3] command as follow
+
 ```bash
-$ env LANG=fr_FR.UTF-8 date 
+$ env LANG=fr_FR.UTF-8 date
 # replace the *value* of `LANG` with the value of the "language pack" you just compiled.
 ```
 
-Thanks for reading. Until then 
+Thanks for reading. Until then
 
 [^1]: Language and geographical region informations refer to any output that is language dependent it won't change output messages for commands that are not region dependent.
 [^2]: Not so sure what `sudo` is ?? check my post on [sudo]({{% ref "sudo-vs-setuid" %}})

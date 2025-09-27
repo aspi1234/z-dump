@@ -1,0 +1,9 @@
+@font-face {
+  font-family: font;
+  src: url("/fonts/Mulish/static/Mulish-SemiBold.ttf");
+}
+
+html {
+  font-family: font;
+  font-size: 12.5pt;
+}
