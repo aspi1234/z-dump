@@ -12,13 +12,13 @@
     <lastBuildDate>Sat, 20 Sep 2025 09:04:06 +0100</lastBuildDate><atom:link href="//localhost:1313/concepts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>A wall and a chalkboard: An Analogy to Understand Docker Images and Containers</title>
+      <title>You genuinely understand Docker images and containers if you have already used a chalk [white] board</title>
       <link>//localhost:1313/concepts/docker-images-vs-containers/</link>
       <pubDate>Sat, 20 Sep 2025 09:04:06 +0100</pubDate>
       <author>ngatchoulandry@protonmail.com (Ngatchou Njiatou Landry Dimitri)</author>
       <guid>//localhost:1313/concepts/docker-images-vs-containers/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/concepts/docker-images-vs-containers/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/concepts/docker-images-vs-containers/featured.png" />
     </item>
     
     <item>
