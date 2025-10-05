@@ -77,10 +77,8 @@ But remember, each of these containers occupies disk space, so remember to clean
 
 ---
 
-Thanks for reading any remarks from as little as you think they are; it will mean the world to me.
+Thanks for reading. Until next Time, cheese :)
 
 This post is a result of the frustration I got when I needed to create a 2gb Linux VM to clear some doubts I had regarding permissions on Linux (turns out this resulted in another post [^1]).
-
-Until next Time, cheese :)
 
 [^1]: A post on [Linux permissions]({{% ref "sudo-vs-setuid" %}})
