@@ -9,7 +9,17 @@
     <managingEditor>ngatchoulandry@protonmail.com (Ngatchou Njiatou Landry Dimitri)</managingEditor>
     <webMaster>ngatchoulandry@protonmail.com (Ngatchou Njiatou Landry Dimitri)</webMaster>
     <copyright>© 2025 Ngatchou Njiatou Landry Dimitri</copyright>
-    <lastBuildDate>Sat, 20 Sep 2025 09:04:06 +0100</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Oct 2025 12:01:29 +0100</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux Pe Os</title>
+      <link>//localhost:1313/writeups/linux-pe-os/</link>
+      <pubDate>Sat, 25 Oct 2025 12:01:29 +0100</pubDate>
+      <author>ngatchoulandry@protonmail.com (Ngatchou Njiatou Landry Dimitri)</author>
+      <guid>//localhost:1313/writeups/linux-pe-os/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/writeups/linux-pe-os/featured.jpg" />
+    </item>
     
     <item>
       <title>You genuinely understand Docker images and containers if you have already used a chalk [white] board</title>

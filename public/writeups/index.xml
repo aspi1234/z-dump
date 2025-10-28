@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writeups on z-dump</title>
+    <link>//localhost:1313/writeups/</link>
+    <description>Recent content in Writeups on z-dump</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>ngatchoulandry@protonmail.com (Ngatchou Njiatou Landry Dimitri)</managingEditor>
+    <webMaster>ngatchoulandry@protonmail.com (Ngatchou Njiatou Landry Dimitri)</webMaster>
+    <copyright>© 2025 Ngatchou Njiatou Landry Dimitri</copyright>
+    <lastBuildDate>Sat, 25 Oct 2025 12:01:29 +0100</lastBuildDate><atom:link href="//localhost:1313/writeups/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Linux Pe Os</title>
+      <link>//localhost:1313/writeups/linux-pe-os/</link>
+      <pubDate>Sat, 25 Oct 2025 12:01:29 +0100</pubDate>
+      <author>ngatchoulandry@protonmail.com (Ngatchou Njiatou Landry Dimitri)</author>
+      <guid>//localhost:1313/writeups/linux-pe-os/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/writeups/linux-pe-os/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

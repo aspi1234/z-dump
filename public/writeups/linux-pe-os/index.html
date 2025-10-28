@@ -1,0 +1,1807 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  <title>Linux Pe Os &middot; z-dump</title>
+    <meta name="title" content="Linux Pe Os &middot; z-dump">
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="//localhost:1313/writeups/linux-pe-os/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.f9ad5bfbaca45bc895af67566a5b5c1f99fb740448a73c35ec1229f323455baaeab05419c0bad2bdce430adff65d129a23e0b6840bdbe9b97eab85b333346cdd.css"
+    integrity="sha512-&#43;a1b&#43;6ykW8iVr2dWaltcH5n7dARIpzw17BIp8yNFW6rqsFQZwLrSvc5DCt/2XRKaI&#43;C2hAvb6bl&#43;q4WzMzRs3Q==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.a187118b41a60744310065c567365de85730c8495301d0ebae41810cc6f7a47432b1de7d4f3b11338959f1ac50c266be6b4b73acf6bf770016eb59b602cc1aa0.js"
+      integrity="sha512-oYcRi0GmB0QxAGXFZzZd6FcwyElTAdDrrkGBDMb3pHQysd59TzsRM4lZ8axQwma&#43;a0tzrPa/dwAW61m2AswaoA=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  <meta property="og:url" content="//localhost:1313/writeups/linux-pe-os/">
+  <meta property="og:site_name" content="z-dump">
+  <meta property="og:title" content="Linux Pe Os">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="writeups">
+    <meta property="article:published_time" content="2025-10-25T12:01:29+01:00">
+    <meta property="article:modified_time" content="2025-10-25T12:01:29+01:00">
+    <meta property="og:image" content="//localhost:1313/writeups/linux-pe-os/featured.jpg">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="//localhost:1313/writeups/linux-pe-os/featured.jpg">
+  <meta name="twitter:title" content="Linux Pe Os">
+<meta name="twitter:image" content="//localhost:1313/writeups/linux-pe-os/featured.jpg">
+    <meta property="og:image" content="//localhost:1313/writeups/linux-pe-os/featured.jpg">
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Writeups",
+    "name": "Linux Pe Os",
+    "headline": "Linux Pe Os",
+    
+    
+    "inLanguage": "en",
+    "url" : "\/\/localhost:1313\/writeups\/linux-pe-os\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Ngatchou Njiatou Landry Dimitri"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-10-25T12:01:29\u002b01:00",
+    "datePublished": "2025-10-25T12:01:29\u002b01:00",
+    
+    "dateModified": "2025-10-25T12:01:29\u002b01:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "3153"
+  }]
+  </script>
+
+
+
+  
+  
+    <meta name="author" content="Ngatchou Njiatou Landry Dimitri">
+  
+  
+    
+      
+        
+      
+    
+      
+        
+          <link href="https://github.com/aspi1234" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://linkedin.com/in/ngatchoulandry" rel="me">
+        
+      
+    
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          z-dump
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/concepts/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Concepts">
+    Concepts
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/writeups/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Writeups">
+    Writeups
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/projects/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Projects">
+    Projects
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/about/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="About Me">
+    About me
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/resume/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Resume">
+    Resume
+  </p>
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 me-1">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/concepts/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Concepts">
+      Concepts
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/writeups/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Writeups">
+      Writeups
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/projects/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Projects">
+      Projects
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/about/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="About Me">
+      About me
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/resume/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Resume">
+      Resume
+    </p>
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Linux Pe Os
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-10-25T12:01:29&#43;01:00">25 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3153 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+  
+    
+  
+  
+
+<span class="mb-[2px]">
+  <a
+    href="https://github.com/aspi1234/z-dump/tree/main/content/writeups/linux-pe-os/index.md"
+    class="text-lg hover:text-primary-500"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Edit content"
+    ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg></span></span></a
+  >
+</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Ngatchou Njiatou Landry Dimitri
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">Linux foundation IT associate. Cybersecurity enthusiast</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:ngatchoulandry1@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          title="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/aspi1234"
+          target="_blank"
+          aria-label="Github"
+          title="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://linkedin.com/in/ngatchoulandry"
+          target="_blank"
+          aria-label="Linkedin"
+          title="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#i-special-suid-permissions--jason">I. Special SUID Permissions : <em>jason</em></a>
+      <ul>
+        <li><a href="#context">CONTEXT</a></li>
+        <li><a href="#1-reconnaissance--finding-suid-files">1. Reconnaissance : Finding SUID Files</a></li>
+        <li><a href="#2-planning">2. Planning</a></li>
+        <li><a href="#3-exploitation">3. exploitation</a>
+          <ul>
+            <li><a href="#a-usrbinprint_my_stuff">a. <code>/usr/bin/print_my_stuff</code></a></li>
+            <li><a href="#b-usrshareprint_file">b. <code>/usr/share/print_file</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#ii-path-abuse--laela">II. Path Abuse : <em>laela</em></a>
+      <ul>
+        <li><a href="#context-1">CONTEXT</a></li>
+        <li><a href="#1enumerationreconnaisance">1.Enumeration/Reconnaisance</a></li>
+        <li><a href="#2-planning-1">2. Planning</a></li>
+        <li><a href="#3-eploitation">3. Eploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-using-sudo-with-xxd-direct-read-for-user-landis">III. Using <code>sudo</code> with <code>xxd</code> direct read for user <em>landis</em></a>
+      <ul>
+        <li><a href="#context-2">CONTEXT</a></li>
+        <li><a href="#1-reconnaissanceenumeration">1. Reconnaissance/Enumeration</a></li>
+        <li><a href="#2-planning-2">2. Planning</a></li>
+        <li><a href="#3-exploitation-1">3. Exploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#iv-using-sudoxxd-and-john-to-crack-alan-password">IV. Using <code>sudo</code>,<code>xxd</code> and <code>john</code> to crack <code>alan</code> password</a>
+      <ul>
+        <li><a href="#context-3">CONTEXT</a></li>
+        <li><a href="#planning">Planning</a></li>
+        <li><a href="#2-exploitation">2. Exploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#v-abusing-systemd-to-read-jean-secrets-message">V. Abusing <code>systemd</code> to <strong>read</strong> <em>jean</em> secret’s message</a>
+      <ul>
+        <li><a href="#context-4">CONTEXT</a></li>
+        <li><a href="#1-reconnaissanceenumeration-1">1. Reconnaissance/Enumeration</a>
+          <ul>
+            <li><a href="#c-content-of-etcsystemdsystemmutli-usertargetwantsbackupservice">c. Content of <code>/etc/systemd/system/mutli-user.target.wants/backup.service</code></a></li>
+            <li><a href="#d-premissions-and-content-of-usrbinbackupsh">d. premissions and content of <code>/usr/bin/backup.sh</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#2-planning-3">2. Planning</a></li>
+        <li><a href="#3-exploitation-2">3. Exploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#vi-abusing-pam-module-to-impersonnate-user-giselle">VI Abusing <code>pam</code> module to impersonnate user <code>giselle</code></a>
+      <ul>
+        <li><a href="#context-5">CONTEXT</a></li>
+        <li><a href="#1-reconnaissanceenumeration-2">1. Reconnaissance/Enumeration</a></li>
+        <li><a href="#2-planning-4">2. Planning</a></li>
+        <li><a href="#3-exploitation-3">3. Exploitation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#i-special-suid-permissions--jason">I. Special SUID Permissions : <em>jason</em></a>
+      <ul>
+        <li><a href="#context">CONTEXT</a></li>
+        <li><a href="#1-reconnaissance--finding-suid-files">1. Reconnaissance : Finding SUID Files</a></li>
+        <li><a href="#2-planning">2. Planning</a></li>
+        <li><a href="#3-exploitation">3. exploitation</a>
+          <ul>
+            <li><a href="#a-usrbinprint_my_stuff">a. <code>/usr/bin/print_my_stuff</code></a></li>
+            <li><a href="#b-usrshareprint_file">b. <code>/usr/share/print_file</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#ii-path-abuse--laela">II. Path Abuse : <em>laela</em></a>
+      <ul>
+        <li><a href="#context-1">CONTEXT</a></li>
+        <li><a href="#1enumerationreconnaisance">1.Enumeration/Reconnaisance</a></li>
+        <li><a href="#2-planning-1">2. Planning</a></li>
+        <li><a href="#3-eploitation">3. Eploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-using-sudo-with-xxd-direct-read-for-user-landis">III. Using <code>sudo</code> with <code>xxd</code> direct read for user <em>landis</em></a>
+      <ul>
+        <li><a href="#context-2">CONTEXT</a></li>
+        <li><a href="#1-reconnaissanceenumeration">1. Reconnaissance/Enumeration</a></li>
+        <li><a href="#2-planning-2">2. Planning</a></li>
+        <li><a href="#3-exploitation-1">3. Exploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#iv-using-sudoxxd-and-john-to-crack-alan-password">IV. Using <code>sudo</code>,<code>xxd</code> and <code>john</code> to crack <code>alan</code> password</a>
+      <ul>
+        <li><a href="#context-3">CONTEXT</a></li>
+        <li><a href="#planning">Planning</a></li>
+        <li><a href="#2-exploitation">2. Exploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#v-abusing-systemd-to-read-jean-secrets-message">V. Abusing <code>systemd</code> to <strong>read</strong> <em>jean</em> secret’s message</a>
+      <ul>
+        <li><a href="#context-4">CONTEXT</a></li>
+        <li><a href="#1-reconnaissanceenumeration-1">1. Reconnaissance/Enumeration</a>
+          <ul>
+            <li><a href="#c-content-of-etcsystemdsystemmutli-usertargetwantsbackupservice">c. Content of <code>/etc/systemd/system/mutli-user.target.wants/backup.service</code></a></li>
+            <li><a href="#d-premissions-and-content-of-usrbinbackupsh">d. premissions and content of <code>/usr/bin/backup.sh</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#2-planning-3">2. Planning</a></li>
+        <li><a href="#3-exploitation-2">3. Exploitation</a></li>
+      </ul>
+    </li>
+    <li><a href="#vi-abusing-pam-module-to-impersonnate-user-giselle">VI Abusing <code>pam</code> module to impersonnate user <code>giselle</code></a>
+      <ul>
+        <li><a href="#context-5">CONTEXT</a></li>
+        <li><a href="#1-reconnaissanceenumeration-2">1. Reconnaissance/Enumeration</a></li>
+        <li><a href="#2-planning-4">2. Planning</a></li>
+        <li><a href="#3-exploitation-3">3. Exploitation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>Welcome this is my writeup on the <em>linux pe os</em> labs given by Mr Guillerme I hope you will learn something new and have a great time reading it.</p>
+<p>I have organised the <em>impersonation</em> of each <strong>user</strong> in the following steps :</p>
+<ol>
+<li>Reconnaissance</li>
+<li>Planning</li>
+<li>Exploitation</li>
+</ol>
+<p><strong>Let&rsquo;s do this !!</strong>
+<img src="featured.jpg" width="500px" height="500px" class="nozoom"></p>
+
+<h2 class="relative group">I. Special SUID Permissions : <em>jason</em> 
+    <div id="i-special-suid-permissions--jason" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#i-special-suid-permissions--jason" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">CONTEXT 
+    <div id="context" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#context" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p><strong>What is a SUID Permission :</strong> Assume we have two users on a system <em>user A</em> and <em>user B</em>. <em>user B</em> has a command that <em>user A</em> needs to <strong>run</strong> to perform a certain task. instead of <em>user A</em> having to <strong>request</strong> either the <em>password</em> or presence of <em>user B</em> to run this command each time, <em>user B</em> can simply set the <code>SUID</code> bit on this command and anyone can run this command with the same <strong>privilegies</strong> of <em>user B</em> ( as <em>user B</em>).You can find detailled information about linux <code>SUID</code> on google or you can read my post on the topic <a
+  href="../../concepts/sudo-vs-setuid/">here</a>.</p></blockquote>
+
+<h3 class="relative group">1. Reconnaissance : Finding SUID Files 
+    <div id="1-reconnaissance--finding-suid-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-reconnaissance--finding-suid-files" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Our first step is to find any programs on the system that have this special SUID permission. It would be difficult to check every file manually, so let&rsquo;s use a search tool called <code>find</code>.</p>
+<p>We will ask <code>find</code> to search the entire filesystem (<code>/</code>) for files (<code>-type f</code>) that have the SUID permission bit set (<code>-perm -4000</code>).</p>
+<p><code>$ find / -perm -4000 2&gt;/dev/null</code></p>
+<p>The search gives us a few results, but <strong>two</strong> files look particularly <em>interesting</em> and <em>non-standard</em>:</p>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./jason/find.png" alt="find output" />
+  
+  
+  </figure>
+<p>To get more details about these files, like who owns them, we can enhance our <code>find</code> command by telling it to execute <code>ls -l</code> on every file it finds:</p>
+<p><code>$ find / -perm -4000 2&gt;/dev/null -exec ls -l {} +</code></p>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./jason/ls.png" alt="find with exec and ls" />
+  
+  
+  </figure>
+<p>The output confirms what we need to know:</p>
+<ul>
+<li><code>/usr/bin/print_my_stuff</code> is owned by the user <strong>laela</strong>.</li>
+<li><code>/usr/share/print_file</code> is owned by the user <strong>jason</strong>.</li>
+</ul>
+
+<h3 class="relative group">2. Planning 
+    <div id="2-planning" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-planning" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Irrespectively of what each program does, We now know that, if we run <code>/usr/share/print_file</code>, the system will execute it with all of <em>jason</em>&rsquo;s privileges. Likewise, running <code>/usr/bin/print_my_stuff</code> will grant it <em>laela</em>&rsquo;s privileges.</p>
+<p>Our plan is simple:</p>
+<ol>
+<li><strong>Investigate what each of these programs does</strong>.</li>
+<li><strong>Determine if we can use their functionality</strong>, combined with their elevated permissions, to read sensitive files belonging to their owners.</li>
+</ol>
+
+<h3 class="relative group">3. exploitation 
+    <div id="3-exploitation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-exploitation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">a. <code>/usr/bin/print_my_stuff</code> 
+    <div id="a-usrbinprint_my_stuff" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#a-usrbinprint_my_stuff" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Running this program simply prints the contents of <em>laela&rsquo;s</em> home directory. While it confirms the SUID permission is working, it doesn&rsquo;t seem to offer any way to control it, so we can&rsquo;t do much with it for now.</p>
+
+<h4 class="relative group">b. <code>/usr/share/print_file</code> 
+    <div id="b-usrshareprint_file" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#b-usrshareprint_file" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>This program is more promising. Its name, <code>print_file</code>, strongly suggests its purpose. Let&rsquo;s test its behavior. If we run it with the name of a file as an argument, it might print that file&rsquo;s contents to the screen.</p>
+<p>Since the program runs as <em>jason</em>, it should be able to read any file that <em>jason</em> can. Let&rsquo;s try to use it to read <code>secret.txt</code> from <em>jason</em>&rsquo;s home directory.</p>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./jason/flag.png" alt="find with exec and ls" />
+  
+  
+  </figure>
+<p><strong>Success!</strong> Because the <code>print_file</code> program is owned by <em>jason</em> and has the <code>SUID</code> permission set, the operating system granted our request to read the file using <em>jason</em>&rsquo;s permissions. We were able to see the contents of his secret file, even though our own user would normally not have access.</p>
+
+<h2 class="relative group">II. Path Abuse : <em>laela</em> 
+    <div id="ii-path-abuse--laela" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#ii-path-abuse--laela" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">CONTEXT 
+    <div id="context-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#context-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Whenever you type a command like <code>ls</code> or <code>cd</code> into your terminal, how does the shell know where to find the program to execute? It doesn&rsquo;t magically know that the <code>ls</code> program is located in the <code>/usr/bin/</code> directory.</p>
+<p>Instead, it consults an environment variable called <a
+  href="../../concepts/env/">PATH</a>.</p>
+<p>The <code>PATH</code> is simply a list of directories, separated by colons (<code>:</code>), that the shell will search through whenever it&rsquo;s asked to run a command. You can see this list yourself by running:<br>
+<code>$ echo $PATH</code>
+The shell searches these directories in order, from left to right. The very first executable it finds with a matching name is the one it runs.</p>
+
+<h3 class="relative group">1.Enumeration/Reconnaisance 
+    <div id="1enumerationreconnaisance" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1enumerationreconnaisance" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>From our previous investigation, we know about the SUID program <code>/usr/bin/print_my_stuff</code>, which is owned by <em>laela</em>. Let&rsquo;s see if we can find any other files related to this program that might give us clues about how it works. We can use <code>find</code> again to search for all files on the system owned by <em>laela</em>.</p>
+<p><code>$ find / -user laela 2&gt;/dev/null</code></p>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./laela/find.png" alt="find output" />
+  
+  
+  </figure>
+<p>We&rsquo;ve found the source code for the program, located at <code>/var/backup_files/print_my_stuff.c</code>. This is a huge advantage, as we can now examine exactly what the program does. Let&rsquo;s look at its contents.</p>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./laela/cat%20c.png" alt="find output" />
+  
+  
+  </figure>
+<p>Looking at the code, two lines stand out:</p>
+<ol>
+<li><code>setuid(geteuid());</code>: This line confirms that the program is intended to run with the full permissions of its owner, <em>laela</em>.</li>
+<li><code>system(&quot;tree /home/laela&quot;);</code>: This is the crucial line. The program executes the <code>tree</code> command to list the contents of <em>laela</em>&rsquo;s home directory.</li>
+</ol>
+
+<h3 class="relative group">2. Planning 
+    <div id="2-planning-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-planning-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Our path to exploitation is now clear. When we run <code>/usr/bin/print_my_stuff</code>, the following will happen:</p>
+<ul>
+<li>The program will start running with <em>laela</em>&rsquo;s permissions because of its SUID bit.</li>
+<li>It will then try to execute the <code>tree</code> command.</li>
+<li>The shell will search for <code>tree</code> in the directories listed in our <code>PATH</code> variable.</li>
+</ul>
+<p>Our plan is to control which <code>tree</code> program gets executed. We will:</p>
+<ol>
+<li>Create our own script and name it <code>tree</code>. This script won&rsquo;t list files; instead, it will be designed to read <em>laela</em>&rsquo;s secret file.</li>
+<li>Place this script in a location where we have write permissions, such as the <code>/tmp</code> directory.</li>
+<li>Modify our <code>PATH</code> variable to put <code>/tmp</code> at the very beginning of the list. This will cause the shell to find our <strong>fake</strong> <code>tree</code> before it finds the <strong>real</strong> one.</li>
+</ol>
+
+<h3 class="relative group">3. Eploitation 
+    <div id="3-eploitation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-eploitation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Let&rsquo;s put the plan into action.</p>
+<p><strong>First, create our malicious <code>tree</code> script.</strong> We want it to read <em>laela</em>&rsquo;s secret file. The <code>cat</code> command is perfect for this. We will create a file at <code>/tmp/tree</code> with the following content:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># /tmp/tree content</span>
+</span></span><span class="line"><span class="cl">cat /home/laela/secret.txt
+</span></span></code></pre></div><p><strong>Second, make the script executable.</strong> The system won&rsquo;t run the script if it doesn&rsquo;t have the execute permission set. We&rsquo;ll use <code>chmod</code> to give it the necessary permissions.</p>
+<p><code>$ chmod 777 /tmp/tree</code></p>
+<p><strong>Third, prepend <code>/tmp</code> to our <code>PATH</code>.</strong> This is the most important step. By placing <code>/tmp</code> at the front, we ensure our malicious script is found first.</p>
+<p><code>$ PATH=/tmp:$PATH</code></p>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./laela/tmp.png" alt="find output" />
+  
+  
+  </figure>
+<p><strong>Finally, run the SUID program.</strong> When we execute <code>print_my_stuff</code>, it will inherit our modified <code>PATH</code>, find our script in <code>/tmp</code>, and run it with <em>laela</em>&rsquo;s privileges.</p>
+<p><code>$ /usr/bin/print_my_stuff</code>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./laela/secret.png" alt="find output" />
+  
+  
+  </figure></p>
+<p>And just like that, instead of listing the files in <em>laela</em>&rsquo;s directory, the program executes our script and prints the content of her secret file.</p>
+
+<h2 class="relative group">III. Using <code>sudo</code> with <code>xxd</code> direct read for user <em>landis</em> 
+    <div id="iii-using-sudo-with-xxd-direct-read-for-user-landis" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#iii-using-sudo-with-xxd-direct-read-for-user-landis" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">CONTEXT 
+    <div id="context-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#context-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>So far, we&rsquo;ve seen how SUID permissions on specific programs can grant us the powers of another user for a single task. <code>sudo</code> (short for &ldquo;superuser do&rdquo;) operates on a similar principle but is far more powerful and configurable. More on <code>sudo</code> vs <code>suid</code> <a
+  href="../../concepts/sudo-vs-setuid/">here</a>.</p>
+<p>The <code>root</code> user is the administrator of a Linux system and can do anything. The <code>sudo</code> command allows a system administrator to grant certain users the ability to run specific commands <em>as if</em> they were the <code>root</code> user.</p>
+<p>This is managed through a configuration file located at <code>/etc/sudoers</code>. This file contains the rules that define which users can run which commands with <code>sudo</code>. When you run a command with <code>sudo</code>, the system checks this file to see if you are authorized. If you are, it executes your command with <code>root</code>&rsquo;s privileges.</p>
+
+<h3 class="relative group">1. Reconnaissance/Enumeration 
+    <div id="1-reconnaissanceenumeration" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-reconnaissanceenumeration" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>How can we know what commands, if any, our current user is allowed to run with <code>sudo</code>? Thankfully, there&rsquo;s a simple command for that. The <code>-l</code> (list) flag will tell us exactly what our privileges are.<br></p>
+<p><code>$ sudo -l</code></p>
+<p>Let&rsquo;s run this and see what it says about our <em>user</em>.</p>
+
+<figure>
+      <img class="my-0 rounded-md" src="./alan/1.png" alt="find output" />
+  
+  
+  </figure>
+<p>The output tells us <strong>two</strong> crucial things:</p>
+<ul>
+<li><code>(root)</code>: We are allowed to run the command as the <code>root</code> user.</li>
+<li><code>/usr/bin/xxd</code>: The specific command we are allowed to run as <code>root</code> is <code>xxd</code>.</li>
+</ul>
+<p><code>xxd</code> is a command-line tool that creates a &ldquo;hex dump&rdquo; of a file. This means it takes any file as input and outputs its contents as a sequence of hexadecimal numbers.</p>
+
+<h3 class="relative group">2. Planning 
+    <div id="2-planning-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-planning-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Our reconnaissance has given us a clear path forward. We have the ability to run the <code>xxd</code> command with the full, unrestricted power of the <code>root</code> user. Since <code>root</code> can read any file on the entire system, we can use <code>xxd</code> to look at files that are normally completely off-limits to us, including the secret files of other users.</p>
+<p>Our plan is to use our <code>sudo</code> rights to run <code>xxd</code> on <em>landis</em>&rsquo;s secret file.</p>
+
+<h3 class="relative group">3. Exploitation 
+    <div id="3-exploitation-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-exploitation-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Going through the <a
+  href="https://gtfobins.github.io/"
+    target="_blank"
+  >gtfobins</a> we see that we can <em>read/write</em> to any file with <code>xxd</code> if it can be called/used with the <code>sudo</code> command with the following command.</p>
+<p><code>$ sudo xxd &quot;file name&quot; | xxd -r</code></p>
+<p>Let&rsquo;s try this on <em>alan&rsquo;s</em> secret file :</p>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./landis/2.png" alt="find output" />
+  
+  
+  </figure>
+
+<h2 class="relative group">IV. Using <code>sudo</code>,<code>xxd</code> and <code>john</code> to crack <code>alan</code> password 
+    <div id="iv-using-sudoxxd-and-john-to-crack-alan-password" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#iv-using-sudoxxd-and-john-to-crack-alan-password" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">CONTEXT 
+    <div id="context-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#context-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>We&rsquo;ve established that our <code>sudo</code> privilege with <code>xxd</code> allows us to read <em>any file</em> on the system.Let&rsquo;s use this ability to read the <code>/etc/shadow</code> file as stated by the lab.</p>
+<p>On modern Linux systems, passwords are not stored in plain text. For security reasons, the system takes a user&rsquo;s password and runs it through a one-way cryptographic function to create a unique &ldquo;fingerprint&rdquo; called a <strong>hash</strong>. This process is irreversible; you can&rsquo;t turn the hash back into the original password. These hashes are stored in a highly-protected file: <code>/etc/shadow</code>.While we can&rsquo;t reverse the hashes, we can try to guess the password.</p>
+
+<h3 class="relative group">Planning 
+    <div id="planning" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#planning" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Our previous exploitation gives us a clear advantage. We can read the <a
+  href="https://www.cyberciti.biz/faq/understanding-etcshadow-file/"
+    target="_blank"
+  >/etc/shadow</a> file, which means we can get the password hash for any user on the system, including <code>alan</code>.</p>
+<p>Our plan will have four steps:</p>
+<ol>
+<li>Use our <code>sudo xxd | xxd -r</code> technique to read the contents of <code>/etc/shadow</code>.</li>
+<li>Save <code>alan</code>&rsquo;s password hash into a new file that we can work with.</li>
+<li>Use a password cracking tool, <a
+  href="https://www.openwall.com/john/"
+    target="_blank"
+  >John the Ripper</a>, along with a common wordlist <a
+  href="https://weakpass.com/wordlists/rockyou.txt"
+    target="_blank"
+  >rockyou.txt</a>, to find the original password.</li>
+</ol>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  
+  >
+  <span
+    
+      class="text-primary-400 pe-3 flex items-center"
+    
+    >
+    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+</span>
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    
+    >If you have <code>kali Os</code> available, both the <code>rockyou.txt</code> wordlist[2] and <code>john the ripper</code> are available by default on <code>kali</code> so no <strong>need</strong> to download</span>
+</div>
+
+
+<h3 class="relative group">2. Exploitation 
+    <div id="2-exploitation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-exploitation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>Step 1: Read the <code>/etc/shadow</code> file</strong></p>
+<p>We&rsquo;ll use the same command as before, but this time we will redirect the output (<code>&gt;</code>) into a file named <code>shadow.txt</code> in our current directory. This makes it much easier to work with.</p>
+<p><code>$ sudo xxd &quot;/etc/shadow&quot; | xxd -r &gt; shadow.txt</code></p>
+<p>Now, if we look at the contents of <code>shadow.txt</code> (<code>cat shadow.txt</code>), we will see the password hashes for all users on the system.</p>
+<p><strong>Step 2: Isolate <code>alan</code>&rsquo;s Hash</strong></p>
+<p>To make the cracking process faster and cleaner, we can copy the line corresponding to <code>alan</code>&rsquo;s account into a new file. Let&rsquo;s call it <code>alan_hash.txt</code>. The file should contain only one line, which will look something like this:</p>
+<p><code>alan:$6$somerandomsalt$anotherlongstringofcharacters:18214:0:99999:7:::</code></p>
+<p><strong>Step 3: Crack the Hash with John the Ripper</strong></p>
+<p>Now we can unleash John the Ripper on this hash. We will point it to our wordlist and the file containing the hash.</p>
+<p><code>$ john --wordlist=/path/to/rockyou.txt --format=crypt alan_hash.txt</code></p>
+<ul>
+<li><code>--wordlist=...</code>: This tells John which list of passwords to try.</li>
+<li><code>alan_hash.txt</code>: This is the file containing the hash we want to crack.</li>
+</ul>
+<p>John will start guessing passwords. If it finds a match, it will print the cracked password to the screen. After a short time, it should reveal <code>alan</code>&rsquo;s password to be <code>grant</code>.</p>
+<p><strong>Step 4: Log In and Read the Secret</strong></p>
+<p>With the password in hand, the final step is simple. We can use the <code>su</code> command to log in as <code>alan</code>.</p>
+<p><code>$ su - alan</code>
+(Enter the password <code>grant</code> when prompted)</p>
+<p>Once we are logged in as <code>alan</code>, we have all of his permissions. We can now easily read his secret file.</p>
+<p><code>$ cat /home/alan/secret.txt</code></p>
+<p>We have successfully used a file-read vulnerability to achieve a full account compromise.</p>
+
+<h2 class="relative group">V. Abusing <code>systemd</code> to <strong>read</strong> <em>jean</em> secret&rsquo;s message 
+    <div id="v-abusing-systemd-to-read-jean-secrets-message" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#v-abusing-systemd-to-read-jean-secrets-message" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">CONTEXT 
+    <div id="context-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#context-4" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>On most linux system after the <code>kernel</code> is done preparing the hardware devices and making them visible to the <code>OS</code> it give space to the a <em>process orchestrator</em> called <a
+  href="https://documentation.suse.com/smart/systems-management/html/systemd-basics/index.html"
+    target="_blank"
+  ><code>systemd</code></a>. <code>Systemd</code> is the program in charge of bringing the computer to usefull state based on the <a
+  href="https://www.baeldung.com/linux/boot-process"
+    target="_blank"
+  >target levels</a> it needs to reach. It does so by reading <a
+  href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units#unit-management"
+    target="_blank"
+  ><code>unit</code></a> file for <code>services</code> under the <code>/etc/systemd/system/</code> directory which contains sysadmin custom services.</p>
+<img src="https://i.imgflip.com/aae165.jpg" title="made at imgflip.com" class="nozoom"/>
+
+<h3 class="relative group">1. Reconnaissance/Enumeration 
+    <div id="1-reconnaissanceenumeration-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-reconnaissanceenumeration-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Our goal is to find a poorly configured <code>systemd</code> service that we can take advantage of. We&rsquo;ll start by looking in the directory where custom services are stored. It&rsquo;s often helpful to list the files by modification time (<code>-lt</code>) to see if anything has been added recently.</p>
+<p><code>$ ls -lt /etc/systemd/system</code></p>
+
+<figure>
+      <img class="my-0 rounded-md" src="./jean/1.png" alt="find output" />
+  
+  
+  </figure>
+<p>A file named <code>backup.service</code> immediately stands out. This doesn&rsquo;t look like a standard system service. Let&rsquo;s examine its contents to understand what it does.</p>
+
+<figure>
+      <img class="my-0 rounded-md" src="./jean/2.png" alt="find output" />
+  
+  
+  </figure>
+<p>So, we have a service that runs a script as <em>jean</em>. The final and most important question is: can we modify that script? Let&rsquo;s check its permissions.</p>
+<p><code>$ ls -l /usr/bin/backup.sh</code></p>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./jean/perm%20back.png" alt="find output" />
+  
+  
+  </figure>
+<p>This is the vulnerability. The permissions <code>-rwxrwxrwx</code> mean that <em>any user</em> on the system has full read, write, and execute permissions on this file. We can change its contents to whatever we want.</p>
+
+<h4 class="relative group">c. Content of <code>/etc/systemd/system/mutli-user.target.wants/backup.service</code> 
+    <div id="c-content-of-etcsystemdsystemmutli-usertargetwantsbackupservice" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#c-content-of-etcsystemdsystemmutli-usertargetwantsbackupservice" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+
+<figure>
+      <img class="my-0 rounded-md" src="./jean/3.png" alt="find output" />
+  
+  
+  </figure>
+
+<h4 class="relative group">d. premissions and content of <code>/usr/bin/backup.sh</code> 
+    <div id="d-premissions-and-content-of-usrbinbackupsh" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#d-premissions-and-content-of-usrbinbackupsh" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./jean/perm%20back.png" alt="find output" />
+  
+  
+  </figure>
+
+<h3 class="relative group">2. Planning 
+    <div id="2-planning-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-planning-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Here is what we know at this point :</p>
+<ol>
+<li>A service, <code>backup.service</code>, is configured to run automatically when the system starts.</li>
+<li>This service runs with the full permissions of the user <em>jean</em>.</li>
+<li>The service executes a script, <code>/usr/bin/backup.sh</code>, which we are allowed to modify.</li>
+</ol>
+<p>We will replace the contents of the <code>backup.sh</code> script with our own command. Instead of performing a backup, the script will copy <em>jean</em>&rsquo;s secret file into a public directory like <code>/tmp</code>, where we can easily read it.</p>
+
+<h3 class="relative group">3. Exploitation 
+    <div id="3-exploitation-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-exploitation-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>First, let&rsquo;s modify the script.</strong> We will overwrite its contents with a simple copy command.</p>
+
+<figure>
+      <img class="my-0 rounded-md" src="./jean/mod%20backup.png" alt="find output" />
+  
+  
+  </figure>
+<p><strong>Next, we need to trigger the service.</strong> The easiest way to trigger it is to simply restart the lab machine. When it boots back up, <code>systemd</code> will execute our modified script as the user <em>jean</em>.After the machine restarts, we can read the flag our script will have copied to the <code>/tmp</code> directory. All we have to do is view its contents.</p>
+<p><code>$ cat /tmp/jean_secret.txt</code>
+
+<figure>
+      <img class="my-0 rounded-md" src="./jean/secret.png" alt="find output" />
+  
+  
+  </figure></p>
+
+<h2 class="relative group">VI Abusing <code>pam</code> module to impersonnate user <code>giselle</code> 
+    <div id="vi-abusing-pam-module-to-impersonnate-user-giselle" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#vi-abusing-pam-module-to-impersonnate-user-giselle" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">CONTEXT 
+    <div id="context-5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#context-5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>On a Linux system, many different programs need to authenticate users—<code>login</code>, <code>su</code>, <code>ssh</code>, the graphical lock screen, and so on. Instead of each program implementing its own authentication logic, they use a centralized and flexible framework called (PAM (Pluggable Authentication Modules))[https://docs.rockylinux.org/10/guides/security/pam/].These are set of security checkpoints that an application can use. An application like <code>ssh</code> can be configured to say, &ldquo;For authentication, I need to check rule #1, then rule #2, then rule #3.&rdquo; These rules are defined in configuration files located in the <code>/etc/pam.d/</code> directory.Each rule in a PAM configuration file calls a specific &ldquo;module&rdquo; (a small library, like <code>pam_unix.so</code>) that performs a single task, such as checking the user&rsquo;s password against <code>/etc/shadow</code>. By editing these configuration files, a system administrator can change the entire authentication process for a program without ever touching the program itself.</p>
+
+<h3 class="relative group">1. Reconnaissance/Enumeration 
+    <div id="1-reconnaissanceenumeration-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-reconnaissanceenumeration-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Let&rsquo;s start by exploring the <code>/etc/pam.d/</code> directory to see if there are any unusual or recently modified files.<br><br>
+<code>$ ls -lt /etc/pam.d/</code></p>
+<p>A file named <code>custom-rule</code> stands out. This is not a standard system file. Let&rsquo;s check its contents and, more importantly, its permissions.<br><br>
+<code>$ ls -l /etc/pam.d/custom-rule</code><br>
+<code>$ cat /etc/pam.d/custom-rule</code></p>
+<p>Now we need to find out which authentication process actually uses this file. We can search for any files in <code>/etc/pam.d/</code> that include our <code>custom-rule</code> file using the <code>grep</code> command as follows.<br></p>
+<p><code>$ grep -r &quot;custom-rule&quot; /etc/pam.d/</code></p>
+<p>The search points us to <code>/etc/pam.d/common-auth</code>.<code>common-auth</code> is a central file that contains authentication rules shared by many different services (<code>login</code>, <code>su</code>, etc.). Let&rsquo;s look inside this file.
+<code>$ cat /etc/pam.d/common-auth</code>
+Content of <code>/etc/pam.d/common-auth</code></p>
+<p>Inside <code>common-auth</code>, we find two interesting lines, one after the other:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">1. auth    <span class="o">[</span><span class="nv">success</span><span class="o">=</span><span class="m">1</span> <span class="nv">default</span><span class="o">=</span>ignore<span class="o">]</span>    pam_succeed_if.so user !<span class="o">=</span> giselle
+</span></span><span class="line"><span class="cl">2. @include custom-rule
+</span></span></code></pre></div><p>Let&rsquo;s break down what that first line does:</p>
+<ul>
+<li><code>auth</code>: This rule applies to the authentication process.</li>
+<li><code>pam_succeed_if.so user != giselle</code>: This module checks a condition. It &ldquo;succeeds&rdquo; if the user trying to authenticate is <strong>not</strong> <code>giselle</code>. It &ldquo;fails&rdquo; if the user <strong>is</strong> <code>giselle</code>.</li>
+<li><code>[success=1 default=ignore]</code>: This is the control logic.
+<ul>
+<li><code>success=1</code>: If the module succeeds (the user is <em>not</em> <code>giselle</code>), then <strong>skip the next 1 rule</strong>. This means the <code>@include custom-rule</code> line will be completely ignored.</li>
+<li><code>default=ignore</code>: If the module results in anything other than success (i.e., it fails because the user <em>is</em> <code>giselle</code>), then just ignore this outcome and <strong>continue to the next rule</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>In simple terms: The <code>custom-rule</code> file is <strong>only</strong> processed when the user trying to log in is <code>giselle</code>.</p>
+
+<h3 class="relative group">2. Planning 
+    <div id="2-planning-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-planning-4" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li>We know that the contents of the <code>custom-rule</code> file are executed only when someone tries to authenticate as <code>giselle</code>.</li>
+<li>We have permission to write whatever we want into the <code>custom-rule</code> file.</li>
+</ol>
+<p>The plan is simple. We will add a new rule to the <code>custom-rule</code> file that will automatically grant authentication, no questions asked. There is a special PAM module perfect for this job called <code>pam_permit.so</code>. Its only purpose is to always return &ldquo;success.&rdquo;</p>
+
+<h3 class="relative group">3. Exploitation 
+    <div id="3-exploitation-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-exploitation-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>First, we will add our rule to the <code>custom-rule</code> file.</strong></p>
+<p><code>$ echo 'auth sufficient pam_permit.so' &gt; /etc/pam.d/custom-rule</code></p>
+<p>Let&rsquo;s understand this rule:</p>
+<ul>
+<li><code>auth</code>: It applies to authentication.</li>
+<li><code>pam_permit.so</code>: This module always succeeds.</li>
+<li><code>sufficient</code>: This control flag means that if this module succeeds (which it always does), PAM should consider the entire authentication process immediately successful and not bother checking any further rules (like the one that asks for a password).</li>
+</ul>
+<p><strong>Now, let&rsquo;s try to become <code>giselle</code>.</strong> We will use the <code>su</code> command.</p>
+<p><code>$ su - giselle</code></p>
+<p>Here is what happens :</p>
+<ol>
+<li>The <code>su</code> command starts the PAM authentication process for the user <code>giselle</code>.</li>
+<li>PAM reads the <code>common-auth</code> file.</li>
+<li>The first rule (<code>pam_succeed_if.so user != giselle</code>) fails, because the user <em>is</em> <code>giselle</code>. The <code>default=ignore</code> logic tells PAM to simply move to the next rule.</li>
+<li>The next rule is <code>@include custom-rule</code>. PAM now reads our file.</li>
+<li>Our rule, <code>auth sufficient pam_permit.so</code>, is executed. The <code>pam_permit.so</code> module returns success.</li>
+<li>The <code>sufficient</code> flag tells PAM, &ldquo;That&rsquo;s good enough for me!&rdquo; The authentication is declared a success, and the subsequent rules (including the one that would ask for <code>giselle</code>&rsquo;s password) are never processed.</li>
+</ol>
+<p>Without asking for a password, the system grants us a shell as <code>giselle</code>. We have successfully bypassed the authentication process.</p>
+<p>We have successfully impersonated all the user So what&rsquo;s next ??
+Let&rsquo;s become root and tear everything apart !! <strong>shall we</strong>
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWl2cXBmb2kxaHIzbmNrZWt1a3dlY3QxdWkzOWE4Z3kzaDJ5end1ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/D6WuLOKOpR2fK/giphy.gif">
+First run the following command</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;user ALL=(root) ALL&#34;</span> <span class="p">|</span> xxd <span class="p">|</span> sudo xxd -r - <span class="s2">&#34;/etc/sudoers.d/user&#34;</span>
+</span></span></code></pre></div><p>Log in as the <code>root</code> user and <strong>lmao</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo su root
+</span></span><span class="line"><span class="cl">$ rm -rf /
+</span></span></code></pre></div><p>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md" style="background-color: #e63946"
+  
+  >
+  <span
+    
+      class="pe-3 flex items-center" style="color: #1d3557"
+    
+    >
+    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor"  d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/></svg></span>
+  </span>
+
+  <span
+    
+      style="color: #f1faee"
+    
+    >Do not <strong>run</strong> this on your host machine</span>
+</div>
+
+
+<figure>
+      <img class="my-0 rounded-md nozoom" src="./static/fire.jpg" alt="fire in the hole" />
+  
+  
+  </figure></p>
+<p><strong>Gongrats !!</strong></p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+  
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/writeups/linux-pe-os/&amp;title=Linux%20Pe%20Os"
+          title="Share on LinkedIn"
+          aria-label="Share on LinkedIn">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://twitter.com/intent/tweet/?url=//localhost:1313/writeups/linux-pe-os/&amp;text=Linux%20Pe%20Os"
+          title="Tweet on Twitter"
+          aria-label="Tweet on Twitter">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></span>
+        </a>
+      
+    
+  </section>
+
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_writeups/linux-pe-os/index.md"
+          data-oid-likes="likes_writeups/linux-pe-os/index.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+
+
+      
+        
+          
+        
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0 z-10">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+          
+          
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 ">
+        <ul class="flex list-none flex-col sm:flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 ">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/tags/"
+                title="Tags">
+                
+                Tags
+              </a>
+            </li>
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 ">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/categories/"
+                title="Categories">
+                
+                Categories
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Ngatchou Njiatou Landry Dimitri
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="//localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

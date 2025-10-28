@@ -1,12 +1,14 @@
 ---
 title: "About Me"
 description: "Learn about some of my projects."
+draft: true 
 cascade:
   showReadingTime: false
   showReadingTime : false
   showDate : false
   showWordCount : false
   showEdit : false
+  
 ---
 
 "Hi there, I’m Ngatchou. You could say I’m an Information Technology enthusiast, but really, I'm just incredibly curious about how things work.
