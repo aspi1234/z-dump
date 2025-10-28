@@ -2,7 +2,8 @@
 title = 'Linux Pe Os'
 date = '2025-10-25T12:01:29+01:00'
 draft = false
-enableImageZoom = false 
+enableImageZoom = false
+showEdit= true
 +++
 
 Welcome this is my writeup on the _linux pe os_ labs given by Mr Guillerme I hope you will learn something new and have a great time reading it.
