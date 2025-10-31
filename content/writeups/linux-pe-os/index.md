@@ -6,7 +6,9 @@ enableImageZoom = false
 showEdit= true
 +++
 
-Welcome this is my writeup on the _linux pe os_ labs given by Mr Guillerme I hope you will learn something new and have a great time reading it.
+Welcome this is my writeup on the _linux pe os_ labs given by [Prof Guillerme](https://www.linkedin.com/in/guillermeduvillie/) I hope you will learn something new and have a great time reading it.
+
+A container version of this lab can be found on [docker hub](https://hub.docker.com/r/aspi858/ccmc-linux-pe) and the files on [github](https://github.com/aspi1234/ccmc-linux-pe)
 
 I have organised the _impersonation_ of each **user** in the following steps :
 
@@ -21,7 +23,7 @@ I have organised the _impersonation_ of each **user** in the following steps :
 
 ### CONTEXT
 
-> **What is a SUID Permission :** Assume we have two users on a system _user A_ and _user B_. _user B_ has a command that _user A_ needs to **run** to perform a certain task. instead of _user A_ having to **request** either the _password_ or presence of _user B_ to run this command each time, _user B_ can simply set the `SUID` bit on this command and anyone can run this command with the same **privilegies** of _user B_ ( as _user B_).You can find detailled information about linux `SUID` on google or you can read my post on the topic [here](../../concepts/sudo-vs-setuid/).
+> **What is a SUID Permission :** Assume we have two users on a system _user A_ and _user B_. _user B_ has a command that _user A_ needs to **run** to perform a certain task. instead of _user A_ having to **request** either the _password_ or presence of _user B_ to run this command each time, _user B_ can simply set the `SUID` bit on this command and anyone can run this command with the same **privilegies** of _user B_ ( as _user B_).You can find detailled information about linux `SUID` on google or you can read my post on the topic {{% reltarget path="sudo-vs-setuid" text="here" %}}.
 
 ### 1. Reconnaissance : Finding SUID Files
 
@@ -86,7 +88,7 @@ alt="find with exec and ls">}}
 
 Whenever you type a command like `ls` or `cd` into your terminal, how does the shell know where to find the program to execute? It doesn't magically know that the `ls` program is located in the `/usr/bin/` directory.
 
-Instead, it consults an environment variable called [PATH](../../concepts/env/).
+Instead, it consults an environment variable called {{% reltarget path="env" text="PATH" %}}.
 
 The `PATH` is simply a list of directories, separated by colons (`:`), that the shell will search through whenever it's asked to run a command. You can see this list yourself by running:<br>
 `$ echo $PATH`
@@ -168,7 +170,7 @@ And just like that, instead of listing the files in _laela_'s directory, the pro
 
 ### CONTEXT
 
-So far, we've seen how SUID permissions on specific programs can grant us the powers of another user for a single task. `sudo` (short for "superuser do") operates on a similar principle but is far more powerful and configurable. More on `sudo` vs `suid` [here](../../concepts/sudo-vs-setuid/).
+So far, we've seen how SUID permissions on specific programs can grant us the powers of another user for a single task. `sudo` (short for "superuser do") operates on a similar principle but is far more powerful and configurable. More on `sudo` vs `suid` {{% reltarget path="sudo-vs-setuid" text="here" %}}.
 
 The `root` user is the administrator of a Linux system and can do anything. The `sudo` command allows a system administrator to grant certain users the ability to run specific commands _as if_ they were the `root` user.
 

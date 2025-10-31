@@ -139,7 +139,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3153"
+    "wordCount": "3170"
   }]
   </script>
 
@@ -604,7 +604,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-25T12:01:29&#43;01:00">25 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3153 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span>
+      <time datetime="2025-10-25T12:01:29&#43;01:00">25 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3170 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
   
@@ -894,7 +894,17 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>Welcome this is my writeup on the <em>linux pe os</em> labs given by Mr Guillerme I hope you will learn something new and have a great time reading it.</p>
+          <p>Welcome this is my writeup on the <em>linux pe os</em> labs given by <a
+  href="https://www.linkedin.com/in/guillermeduvillie/"
+    target="_blank"
+  >Prof Guillerme</a> I hope you will learn something new and have a great time reading it.</p>
+<p>A container version of this lab can be found on <a
+  href="https://hub.docker.com/r/aspi858/ccmc-linux-pe"
+    target="_blank"
+  >docker hub</a> and the files on <a
+  href="https://github.com/aspi1234/ccmc-linux-pe"
+    target="_blank"
+  >github</a></p>
 <p>I have organised the <em>impersonation</em> of each <strong>user</strong> in the following steps :</p>
 <ol>
 <li>Reconnaissance</li>
@@ -924,8 +934,7 @@
     
 </h3>
 <blockquote>
-<p><strong>What is a SUID Permission :</strong> Assume we have two users on a system <em>user A</em> and <em>user B</em>. <em>user B</em> has a command that <em>user A</em> needs to <strong>run</strong> to perform a certain task. instead of <em>user A</em> having to <strong>request</strong> either the <em>password</em> or presence of <em>user B</em> to run this command each time, <em>user B</em> can simply set the <code>SUID</code> bit on this command and anyone can run this command with the same <strong>privilegies</strong> of <em>user B</em> ( as <em>user B</em>).You can find detailled information about linux <code>SUID</code> on google or you can read my post on the topic <a
-  href="../../concepts/sudo-vs-setuid/">here</a>.</p></blockquote>
+<p><strong>What is a SUID Permission :</strong> Assume we have two users on a system <em>user A</em> and <em>user B</em>. <em>user B</em> has a command that <em>user A</em> needs to <strong>run</strong> to perform a certain task. instead of <em>user A</em> having to <strong>request</strong> either the <em>password</em> or presence of <em>user B</em> to run this command each time, <em>user B</em> can simply set the <code>SUID</code> bit on this command and anyone can run this command with the same <strong>privilegies</strong> of <em>user B</em> ( as <em>user B</em>).You can find detailled information about linux <code>SUID</code> on google or you can read my post on the topic <a href="/concepts/sudo-vs-setuid/" target="_blank" rel="noopener noreferrer">here</a>.</p></blockquote>
 
 <h3 class="relative group">1. Reconnaissance : Finding SUID Files 
     <div id="1-reconnaissance--finding-suid-files" class="anchor"></div>
@@ -1036,8 +1045,7 @@
     
 </h3>
 <p>Whenever you type a command like <code>ls</code> or <code>cd</code> into your terminal, how does the shell know where to find the program to execute? It doesn&rsquo;t magically know that the <code>ls</code> program is located in the <code>/usr/bin/</code> directory.</p>
-<p>Instead, it consults an environment variable called <a
-  href="../../concepts/env/">PATH</a>.</p>
+<p>Instead, it consults an environment variable called <a href="/concepts/env/" target="_blank" rel="noopener noreferrer">PATH</a>.</p>
 <p>The <code>PATH</code> is simply a list of directories, separated by colons (<code>:</code>), that the shell will search through whenever it&rsquo;s asked to run a command. You can see this list yourself by running:<br>
 <code>$ echo $PATH</code>
 The shell searches these directories in order, from left to right. The very first executable it finds with a matching name is the one it runs.</p>
@@ -1147,8 +1155,7 @@ The shell searches these directories in order, from left to right. The very firs
     </span>        
     
 </h3>
-<p>So far, we&rsquo;ve seen how SUID permissions on specific programs can grant us the powers of another user for a single task. <code>sudo</code> (short for &ldquo;superuser do&rdquo;) operates on a similar principle but is far more powerful and configurable. More on <code>sudo</code> vs <code>suid</code> <a
-  href="../../concepts/sudo-vs-setuid/">here</a>.</p>
+<p>So far, we&rsquo;ve seen how SUID permissions on specific programs can grant us the powers of another user for a single task. <code>sudo</code> (short for &ldquo;superuser do&rdquo;) operates on a similar principle but is far more powerful and configurable. More on <code>sudo</code> vs <code>suid</code> <a href="/concepts/sudo-vs-setuid/" target="_blank" rel="noopener noreferrer">here</a>.</p>
 <p>The <code>root</code> user is the administrator of a Linux system and can do anything. The <code>sudo</code> command allows a system administrator to grant certain users the ability to run specific commands <em>as if</em> they were the <code>root</code> user.</p>
 <p>This is managed through a configuration file located at <code>/etc/sudoers</code>. This file contains the rules that define which users can run which commands with <code>sudo</code>. When you run a command with <code>sudo</code>, the system checks this file to see if you are authorized. If you are, it executes your command with <code>root</code>&rsquo;s privileges.</p>
 
