@@ -42,8 +42,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.6ad5f30141afe3e52958191c67e66d2556032b07fc6fa53b723fc5fc74cc647465228d5adf480be72614c23658ec996ba82e5e4eecfa4d0fc3411c38a3cd5ced.css"
-    integrity="sha512-atXzAUGv4&#43;UpWBkcZ&#43;ZtJVYDKwf8b6U7cj/F/HTMZHRlIo1a30gL5yYUwjZY7JlrqC5eTuz6TQ/DQRw4o81c7Q==">
+    href="/css/main.bundle.min.2f1343d9d76659c8e761f122196df7f7883af2b9aeb8d9da18b5bd1a999b05bbf61f7e8f6517694163735f7d4de1264f44d4682c6967aec5e7b447d309143366.css"
+    integrity="sha512-LxND2ddmWcjnYfEiGW3394g68rmuuNnaGLW9GpmbBbv2H36PZRdpQWNzX31N4SZPRNRoLGlnrsXntEfTCRQzZg==">
 
   
   
@@ -119,7 +119,7 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Writeups",
+    "articleSection": "writeups",
     "name": "Linux Pe Os",
     "headline": "Linux Pe Os",
     
@@ -139,7 +139,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3170"
+    "wordCount": "3173"
   }]
   </script>
 
@@ -295,7 +295,7 @@
   
   class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
   
-  <p class="text-base font-medium" title="Writeups">
+  <p class="text-base font-medium" title="writeups">
     Writeups
   </p>
 </a>
@@ -465,7 +465,7 @@
     
     class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-bg font-bg" title="Writeups">
+    <p class="text-bg font-bg" title="writeups">
       Writeups
     </p>
   </a>
@@ -604,7 +604,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-25T12:01:29&#43;01:00">25 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3170 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span>
+      <time datetime="2025-10-25T12:01:29&#43;01:00">25 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3173 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
   
@@ -1023,7 +1023,8 @@
   
   
   </figure>
-<p><strong>Success!</strong> Because the <code>print_file</code> program is owned by <em>jason</em> and has the <code>SUID</code> permission set, the operating system granted our request to read the file using <em>jason</em>&rsquo;s permissions. We were able to see the contents of his secret file, even though our own user would normally not have access.</p>
+<p><strong>Success !</strong> Because the <code>print_file</code> program is owned by <em>jason</em> and has the <code>SUID</code> permission set, the operating system granted our request to read the file using <em>jason</em>&rsquo;s permissions. We were able to see the contents of his secret file, even though our own user would normally not have access.</p>
+<hr>
 
 <h2 class="relative group">II. Path Abuse : <em>laela</em> 
     <div id="ii-path-abuse--laela" class="anchor"></div>
@@ -1135,6 +1136,7 @@ The shell searches these directories in order, from left to right. The very firs
   
   </figure></p>
 <p>And just like that, instead of listing the files in <em>laela</em>&rsquo;s directory, the program executes our script and prints the content of her secret file.</p>
+<hr>
 
 <h2 class="relative group">III. Using <code>sudo</code> with <code>xxd</code> direct read for user <em>landis</em> 
     <div id="iii-using-sudo-with-xxd-direct-read-for-user-landis" class="anchor"></div>
@@ -1217,6 +1219,7 @@ The shell searches these directories in order, from left to right. The very firs
   
   
   </figure>
+<hr>
 
 <h2 class="relative group">IV. Using <code>sudo</code>,<code>xxd</code> and <code>john</code> to crack <code>alan</code> password 
     <div id="iv-using-sudoxxd-and-john-to-crack-alan-password" class="anchor"></div>
@@ -1326,6 +1329,7 @@ The shell searches these directories in order, from left to right. The very firs
 <p>Once we are logged in as <code>alan</code>, we have all of his permissions. We can now easily read his secret file.</p>
 <p><code>$ cat /home/alan/secret.txt</code></p>
 <p>We have successfully used a file-read vulnerability to achieve a full account compromise.</p>
+<hr>
 
 <h2 class="relative group">V. Abusing <code>systemd</code> to <strong>read</strong> <em>jean</em> secret&rsquo;s message 
     <div id="v-abusing-systemd-to-read-jean-secrets-message" class="anchor"></div>
@@ -1465,6 +1469,7 @@ The shell searches these directories in order, from left to right. The very firs
   
   
   </figure></p>
+<hr>
 
 <h2 class="relative group">VI Abusing <code>pam</code> module to impersonnate user <code>giselle</code> 
     <div id="vi-abusing-pam-module-to-impersonnate-user-giselle" class="anchor"></div>
@@ -1569,9 +1574,9 @@ Content of <code>/etc/pam.d/common-auth</code></p>
 <p>We have successfully impersonated all the user So what&rsquo;s next ??
 Let&rsquo;s become root and tear everything apart !! <strong>shall we</strong>
 <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWl2cXBmb2kxaHIzbmNrZWt1a3dlY3QxdWkzOWE4Z3kzaDJ5end1ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/D6WuLOKOpR2fK/giphy.gif">
-First run the following command</p>
+First run let&rsquo;s run the following command</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;user ALL=(root) ALL&#34;</span> <span class="p">|</span> xxd <span class="p">|</span> sudo xxd -r - <span class="s2">&#34;/etc/sudoers.d/user&#34;</span>
-</span></span></code></pre></div><p>Log in as the <code>root</code> user and <strong>lmao</strong></p>
+</span></span></code></pre></div><p>Log in as the <code>root</code> user and <strong>LMAO</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo su root
 </span></span><span class="line"><span class="cl">$ rm -rf /
 </span></span></code></pre></div><p>

@@ -80,7 +80,9 @@ src="./jason/flag.png"
 nozoom=true
 alt="find with exec and ls">}}
 
-**Success!** Because the `print_file` program is owned by _jason_ and has the `SUID` permission set, the operating system granted our request to read the file using _jason_'s permissions. We were able to see the contents of his secret file, even though our own user would normally not have access.
+**Success !** Because the `print_file` program is owned by _jason_ and has the `SUID` permission set, the operating system granted our request to read the file using _jason_'s permissions. We were able to see the contents of his secret file, even though our own user would normally not have access.
+
+---
 
 ## II. Path Abuse : _laela_
 
@@ -166,6 +168,8 @@ alt="find output">}}
 
 And just like that, instead of listing the files in _laela_'s directory, the program executes our script and prints the content of her secret file.
 
+---
+
 ## III. Using `sudo` with `xxd` direct read for user _landis_
 
 ### CONTEXT
@@ -214,6 +218,8 @@ Let's try this on _alan's_ secret file :
 src="./landis/2.png"
 nozoom=true
 alt="find output">}}
+
+---
 
 ## IV. Using `sudo`,`xxd` and `john` to crack `alan` password
 
@@ -276,6 +282,8 @@ Once we are logged in as `alan`, we have all of his permissions. We can now easi
 `$ cat /home/alan/secret.txt`
 
 We have successfully used a file-read vulnerability to achieve a full account compromise.
+
+---
 
 ## V. Abusing `systemd` to **read** _jean_ secret's message
 
@@ -351,6 +359,8 @@ alt="find output">}}
 src="./jean/secret.png"
 nozoom=false
 alt="find output">}}
+
+---
 
 ## VI Abusing `pam` module to impersonnate user `giselle`
 
@@ -429,13 +439,13 @@ Without asking for a password, the system grants us a shell as `giselle`. We hav
 We have successfully impersonated all the user So what's next ??
 Let's become root and tear everything apart !! **shall we**
 <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWl2cXBmb2kxaHIzbmNrZWt1a3dlY3QxdWkzOWE4Z3kzaDJ5end1ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/D6WuLOKOpR2fK/giphy.gif">
-First run the following command
+First run let's run the following command
 
 ```bash
 $ echo "user ALL=(root) ALL" | xxd | sudo xxd -r - "/etc/sudoers.d/user"
 ```
 
-Log in as the `root` user and **lmao**
+Log in as the `root` user and **LMAO**
 
 ```bash
 $ sudo su root
