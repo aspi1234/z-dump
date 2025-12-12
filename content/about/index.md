@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 description: "Learn about some of my projects."
-draft: true 
+draft: false 
 sharingLinks : false
 cascade:
   showReadingTime: false
