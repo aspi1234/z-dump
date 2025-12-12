@@ -3,6 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>//localhost:1313/concepts/abstraction/</loc>
+    <lastmod>2025-12-12T05:37:46+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//localhost:1313/concepts/</loc>
+    <lastmod>2025-12-12T05:37:46+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2025-12-12T05:37:46+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>//localhost:1313/writeups/linux-pe-os/</loc>
     <lastmod>2025-10-25T12:01:29+01:00</lastmod>
     <changefreq>daily</changefreq>
@@ -11,18 +29,6 @@
   <url>
     <loc>//localhost:1313/writeups/</loc>
     <lastmod>2025-10-25T12:01:29+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2025-10-25T12:01:29+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/concepts/</loc>
-    <lastmod>2025-09-20T09:04:06+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
